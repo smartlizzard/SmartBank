@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "smartlizzard/SmartBank"
+    registry = "smartlizzard/smartbank"
     registryCredential = 'dockerhub'
     dockerImage = ''
   }
