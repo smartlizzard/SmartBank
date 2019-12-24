@@ -1,5 +1,6 @@
 package com.smartbank.domain;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +19,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class PrimaryAccount {
+public class PrimaryAccount implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
