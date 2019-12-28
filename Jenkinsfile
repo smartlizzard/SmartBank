@@ -20,13 +20,13 @@ agent any
                 '''
             }
         }
-  
+    /*
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/smartlizzard/SmartBank.git'
+        git url:'https://github.com/smartlizzard/SmartBank.git'
       }
     }
-    
+    */
     stage('Maven Build') {
       steps{
         script {
@@ -37,7 +37,7 @@ agent any
     stage('Building image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":latest"
         }
       }
     }
@@ -52,7 +52,7 @@ agent any
     }
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi $registry:latest"
       }
     }
   }
