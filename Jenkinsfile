@@ -7,7 +7,7 @@ agent any
 
   environment {
     registry = "smartlizzard/smartbank"
-    registryCredential = 'dockerhub'
+    registryCredential = 'DockerHub'
     dockerImage = ''
   }
   
